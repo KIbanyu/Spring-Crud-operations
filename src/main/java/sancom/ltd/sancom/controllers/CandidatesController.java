@@ -1,10 +1,8 @@
 package sancom.ltd.sancom.controllers;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import sancom.ltd.sancom.models.ModelCandidates;
+import sancom.ltd.sancom.services.CandidateService;
 
 import java.util.HashMap;
 
@@ -12,22 +10,41 @@ import java.util.HashMap;
 @RequestMapping(value = "api/web/v1/")
 public class CandidatesController {
 
-    @PostMapping("candidates/registerUser")
+    private CandidateService candidateService;
+
+    public CandidatesController(CandidateService candidateService) {
+        this.candidateService = candidateService;
+    }
+
+    @PostMapping("candidates/registerCandidate")
     public HashMap<String, Object> candidateRegistration(@RequestBody ModelCandidates modelCandidates) {
 
-        return null;
+        return candidateService.registerCandidate(modelCandidates, "register");
     }
 
-    @PostMapping("candidates/delete")
-    public HashMap<String, Object> deleteCandidate(@RequestBody ModelCandidates modelCandidates) {
+    @GetMapping("candidates/deleteCandidate")
+    public HashMap<String, Object> deleteCandidate(long id) {
 
-        return null;
+        return candidateService.deleteCandidate(id);
     }
 
-    @PostMapping("candidates/edit")
+    @PostMapping("candidates/editCandidate")
     public HashMap<String, Object> editCandidate(@RequestBody ModelCandidates modelCandidates) {
 
-        return null;
+        return candidateService.registerCandidate(modelCandidates, "update");
     }
+
+    @GetMapping("candidates/getAllCandidates")
+    public HashMap<String, Object> getAllCandidates() {
+
+        return candidateService.getCandidates("all", 0);
+    }
+
+    @GetMapping("candidates/getCandidateById")
+    public HashMap<String, Object> getCandidateById(long id) {
+
+        return candidateService.getCandidates("candidateById", id);
+    }
+
 
 }
