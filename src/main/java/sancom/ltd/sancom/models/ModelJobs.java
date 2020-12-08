@@ -1,7 +1,7 @@
 package sancom.ltd.sancom.models;
 
 public class ModelJobs {
-    private long id;
+
     private String name;
     private String description;
     private String type;
@@ -9,16 +9,9 @@ public class ModelJobs {
     private String interview_start_time;
     private String interview_end_time;
     private String years_of_experience;
-    private long education_level;
+    private String education_level;
     private String interview_date;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -76,11 +69,11 @@ public class ModelJobs {
         this.years_of_experience = years_of_experience;
     }
 
-    public long getEducation_level() {
+    public String getEducation_level() {
         return education_level;
     }
 
-    public void setEducation_level(long education_level) {
+    public void setEducation_level(String education_level) {
         this.education_level = education_level;
     }
 

@@ -22,16 +22,16 @@ public class CandidatesEntity {
     private String phone;
     private long education_level;
     private int years_of_experience;
-    private long selected_job;
+    private long selectedJob;
     private Date createdOn;
     private Date updatedOn = new Date();
 
-    public long getSelected_job() {
-        return selected_job;
+    public long getSelectedJob() {
+        return selectedJob;
     }
 
-    public void setSelected_job(long selected_job) {
-        this.selected_job = selected_job;
+    public void setSelectedJob(long selected_job) {
+        this.selectedJob = selected_job;
     }
 
     public long getId() {

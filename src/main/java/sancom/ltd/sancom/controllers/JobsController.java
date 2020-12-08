@@ -12,6 +12,7 @@ import sancom.ltd.sancom.services.JobsService;
 
 import java.util.HashMap;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "api/web/v1/")
 public class JobsController {

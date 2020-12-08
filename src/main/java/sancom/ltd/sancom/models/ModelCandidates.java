@@ -7,7 +7,7 @@ public class ModelCandidates {
     private String phone;
     private long education_level;
     private int years_of_experience;
-    private long id;
+
     private long selected_job;
 
     public long getSelected_job() {
@@ -18,13 +18,6 @@ public class ModelCandidates {
         this.selected_job = selected_job;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getFirst_name() {
         return first_name;
